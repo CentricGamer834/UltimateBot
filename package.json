@@ -1,0 +1,19 @@
+{
+    "name": "aio-ultimate-server",
+    "description": "All In One Tool For Ultimate Server",
+    "version": "0.0.1-pre_pre_pre_beta",
+    "main": "src/main.js",
+    "author": {
+        "name": "centric",
+        "url": "https://github.com/CentricGamer834"
+    },
+    "scripts": {
+        "start": "node .",
+        "test": "echo off"
+    },
+    "dependencies": {
+        "aio-ultimate-server": "file:",
+        "discord.js": "^11.6.4",
+        "dotenv": "^16.4.5"
+    }
+}
