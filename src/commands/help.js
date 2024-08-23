@@ -1,3 +1,5 @@
+const { prefix } = process.env;
+
 module.exports = {
     name: "help",
     description: "Get help for all commands or a specific command",

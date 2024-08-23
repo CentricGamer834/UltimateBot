@@ -1,2 +1,2 @@
-# UltimateBot-NotReally-
+# UltimateBot
 Ultimate Bot (Not Really)

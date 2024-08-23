@@ -12,8 +12,7 @@
         "test": "echo off"
     },
     "dependencies": {
-        "aio-ultimate-server": "file:",
-        "discord.js": "^11.6.4",
+        "discord.js": "^11.6.0",
         "dotenv": "^16.4.5"
     }
 }
