@@ -1,10 +1,16 @@
 module.exports = {
-    name: "message",
+    name: "messageCreate",
     async execute(message, client) {
         const { commands } = client;
         const { prefix } = process.env;
 
-        const args = message.content.slice(prefix.length).trim().split(/ +/g);
+        if (message.author.bot || !message.content.startsWith(prefix)) return;
+
+        const args = message.content
+            .toLocaleLowerCase()
+            .slice(prefix.length)
+            .trim()
+            .split(/ +/g);
         const command = args.shift();
 
         if (commands.has(command)) {

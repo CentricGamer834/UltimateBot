@@ -1,25 +1,30 @@
 const { prefix } = process.env;
+const { EmbedBuilder, Message } = require("discord.js");
 
 module.exports = {
     name: "help",
     description: "Get help for all commands or a specific command",
+    /** @param {Message} message */
     async execute(args, message, client) {
         const { commands } = client;
-        let Embed = "";
+        const HelpEmbed = new EmbedBuilder()
+            .setTitle("Help Command")
+            .setDescription(`Displaying help page (${commands.size} commands)`)
+            .setColor("DarkAqua")
+            .setFooter({
+                iconURL: message.author.avatarURL(),
+                text: `${message.author.username} requested help`,
+            })
+            .setTimestamp(Date.now());
 
-        Embed += "```HELP COMMAND\n";
-
-        if (args.length <= 0 && commands.get(args.shift())) {
-            const givenCommand = commands.get(args.shift());
-            Embed += `${givenCommand.name} - ${givenCommand.description}`;
-        } else {
-            commands.forEach((command) => {
-                Embed += `${prefix}${command.name} - ${command.description}\n`;
+        commands.forEach((command) => {
+            HelpEmbed.addFields({
+                inline: true,
+                name: command.name,
+                value: command.description,
             });
-        }
+        });
 
-        Embed += "```";
-
-        message.channel.send(Embed);
+        message.reply({ embeds: [HelpEmbed] });
     },
 };

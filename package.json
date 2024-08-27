@@ -12,7 +12,10 @@
         "test": "echo off"
     },
     "dependencies": {
-        "discord.js": "^11.6.4",
-        "dotenv": "^16.4.5"
+        "@killovsky/gimages": "1.0.1",
+        "aio-ultimate-server": "file:",
+        "discord.js": "^14.15.3",
+        "dotenv": "^16.4.5",
+        "moment": "^2.30.1"
     }
 }
